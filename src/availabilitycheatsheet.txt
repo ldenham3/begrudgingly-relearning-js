@@ -1,0 +1,117 @@
+JS Cheat Sheet - What We Got
+I know too many languages at this point to keep the semantics of what operators I do and dont have, syntax of stuff like switches, etc. So heres a text file that keeps them for me for reference in case I want it in the future. 
+
+-1. TIDBITS
+-----------
+Order of operations applies
+Between the {} is refered to as a block of code
+Blocks (ie. placement of the { ) start at the end of the line, not a new line 
+You can skip the blocks {} if its only one line. Ex. if (condition) console.log("message") is fine. Which is infuriating but whatever
+Switch case is for comparing a variable value (the switch param) to the case parameters
+Things that are the same: (screaming internally)
+	1. for (let i = 0; i <= 10; i++) if (i % 2 != 0) console.log(i) 
+	2. for (let i = 0; i <= 10; i++) {
+			if (i % 2 != 0) console.log(i) 
+		}
+	3. for (let i = 0; i <= 10; i++) {
+			if (i % 2 != 0) {
+				console.log(i);
+			}
+		} 
+
+
+
+0. COMMON TERMINOLOGY because some languages don't treat it the same.
+--------------------------------------------------------------------
+Operator - Used to do stuff, like asign values
+Expression - Produces a value, combos of operators and variables
+Short Circuiting - When using logical operators, when the desired value is found it stops and returns, ignoring the rest. Ex. false || 1 || 2 returns 1, skips 2
+Truthy (anything not on the falsy list) vs. Falsy (undefined, null, 0, false, '', NaN) 
+
+
+
+1. OPERATOR AVAILABILITY
+------------------------
+Arethemetic - [ + , - , * , / , % , ** (exponent notation) , ++ , -- ]
+Assignment - [ = , += , -=, *= ]
+Comparison - Relational [ > , < , >= , <= ] Equality [ === , !== , == , != ]
+	1a. Strict (===) vs Loose Equality (==) - type and value vs just value, loose converts the type of the left side to the right sides type
+Logical - [ ||, &&, ! ]
+	1b. Truthy (anything not on the falsy list) vs. Falsy (undefined, null, 0, false, '', NaN) 
+		1b1. Logical operators use these, if in a logical operation it sees not explicit true or false it will try and interpret, for ex with || as soon as a truthy value is found it stops 
+Bitwise - [ &, | ]
+	1c. Works on individual bits, can use bytes (8 bits) to set and compare things, can treat as setting flags
+Ternary - [ let variable = expression ? 'use this as value if expression is true' : 'use this as value if expression is false'; ]
+
+
+2. SYNTAX QUICK REF
+-------------------
+
+Variables: 
+	let x = value;
+	const x = value;
+	x = value;
+
+Ternary Expressions: 
+	let variable = expression ? 'use this as value if expression is true' : 'use this as value if expression is false';
+
+If/Else:
+	if (condition) {
+		code and stuff
+		statment to be executed
+	}
+	else if (another condition) {
+		code and stuff
+		statement to be executed
+	}
+	else statment
+
+	IF ONLY ONE LINE STATEMENT, SKIP {}, because convention in JS is infuriating:
+	if (condition) 
+		statment to be executed
+	else if (another condition) 
+		statement to be executed
+	else statment
+
+Switch/Case:
+	switch (variable) {
+		case 'thing':
+			console.log('is thing');
+			break;
+		case 'thing2':
+			console.log('is thing 2');
+			break;
+		default: 
+			console.log('is unknown thing');
+	}
+
+Loops: 
+	1. For 
+		1a. Single Line
+			for (let i = 0; i < 5; i++) console.log('Hello World')
+		1b. Multi Line
+			for (let i = 0; i < 5; i++) {
+				stuff here
+				console.log('Hello World')
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
