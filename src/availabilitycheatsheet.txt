@@ -18,6 +18,10 @@ Things that are the same: (screaming internally)
 				console.log(i);
 			}
 		} 
+While vs Do-While - Do-While executed at least once even if the condition is false
+For-In/For-Of - used mainly to iterate over properties in an object or elements in an array (For-In for objects, For-Of for arrays (since ES6))
+Accessing properties of an object, dot (object.targetProperty) or bracket notation (object['name of target property as string'])
+Use bracket notation if you dont know at the time of writing code which property you are going to access, for ex name of traget property calculated at runtime
 
 
 
@@ -27,6 +31,8 @@ Operator - Used to do stuff, like asign values
 Expression - Produces a value, combos of operators and variables
 Short Circuiting - When using logical operators, when the desired value is found it stops and returns, ignoring the rest. Ex. false || 1 || 2 returns 1, skips 2
 Truthy (anything not on the falsy list) vs. Falsy (undefined, null, 0, false, '', NaN) 
+Break - jump out of loop at runtime, applies to all loops
+Continue - when js engine sees continue, it will jump to the beginning of the loop and continue execution of the next iteration, outdated/ugly, not recomended for use
 
 
 
@@ -42,6 +48,7 @@ Logical - [ ||, &&, ! ]
 Bitwise - [ &, | ]
 	1c. Works on individual bits, can use bytes (8 bits) to set and compare things, can treat as setting flags
 Ternary - [ let variable = expression ? 'use this as value if expression is true' : 'use this as value if expression is false'; ]
+Loops - [ for, while, do while, for in, for of]
 
 
 2. SYNTAX QUICK REF
@@ -51,6 +58,23 @@ Variables:
 	let x = value;
 	const x = value;
 	x = value;
+
+Objects:
+	const person = {
+		name: 'Leah',
+		age: 26
+	};
+
+Funtions: 
+function funcName (localparams) {
+	code block;
+}
+
+Accessing Obj Properties:
+	1. Dot notation
+		ex. person.name , object.targetProperty
+	2. Bracket Notation
+		ex. person['name'] , object['name of target property as string']
 
 Ternary Expressions: 
 	let variable = expression ? 'use this as value if expression is true' : 'use this as value if expression is false';
@@ -94,6 +118,32 @@ Loops:
 				stuff here
 				console.log('Hello World')
 			}
+
+	2. While 
+		let i = 0;
+		while (i <= 10) {
+			if (i % 2 != 0) { console.log("The Odds ", i); }
+			i++;
+		}
+
+	3. Do-While
+		let j = 0;
+		do {
+			if (j % 2 != 0) console.log(j);
+			j++;
+		} while (j <= 10);
+
+	4. For-In (iterate over properties of object)
+		const person = {
+			name: 'Leah',
+			age: 26
+		};
+
+		for (let key in person) {
+			console.log(key, person[key]);
+		}
+
+	5. For-Of (iterate over elements in array)
 
 
 

@@ -46,3 +46,71 @@ for (let i = 0; i < 5; i++) console.log('Hello World', i) //if multi line, block
 
 //display only odds
 for (let i = 0; i <= 10; i++) if (i % 2 != 0) console.log(i) 
+
+
+//while loops
+console.log('-----WHILE LOOP EXAMPLE------');
+//same thing as a for loop, display only odds
+
+let i = 0;
+while (i <= 10) {
+	if (i % 2 != 0) console.log(i);
+	i++;
+}
+
+//do-while loops
+console.log('-----DO-WHILE LOOP EXAMPLE------');
+//same thing as a while loop, display only odds
+
+let j = 0;
+do {
+	if (j % 2 != 0) console.log(j);
+	j++;
+} while (j <= 10);
+
+//for in - iterate over properties in objects
+console.log('-----FOR-IN LOOP EXAMPLE------');
+//display all properties in this object (can also do array elements)
+
+const person = {
+	name: 'Leah',
+	age: 26
+};
+
+for (let key in person) {
+	console.log(key, person[key]);
+}
+
+//for of - iterate over array elements
+console.log('-----FOR-OF LOOP EXAMPLE------');
+
+const colors = ['red', 'blue', 'green'];
+//can use of to basically skip needing to use the index
+for (let color of colors) {
+	console.log(color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
