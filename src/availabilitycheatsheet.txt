@@ -22,6 +22,7 @@ While vs Do-While - Do-While executed at least once even if the condition is fal
 For-In/For-Of - used mainly to iterate over properties in an object or elements in an array (For-In for objects, For-Of for arrays (since ES6))
 Accessing properties of an object, dot (object.targetProperty) or bracket notation (object['name of target property as string'])
 Use bracket notation if you dont know at the time of writing code which property you are going to access, for ex name of traget property calculated at runtime
+Functions are objects
 
 
 
@@ -146,11 +147,51 @@ Loops:
 	5. For-Of (iterate over elements in array)
 
 
+3. CREATING AN OBJECT 
+---------------------
+	-if you dont use new operator, 'this' by default points to the global object, which is window
 
+	1. Factory Function (Camel case)(call funtion that returns a new object)
+		function factoryFunctionExample(params){
+			return {
+				params,
+				imAMethod() {
+					console.log('method doing stuff');
+				}
+			}
+		}
+		const factoryObj = factoryFunctionExample(1); 
 
+	2. Constructor Function (Pascal naming)(uses new operator, this creates empty js object under the hood, sets 'this' to point to the new empty object, returns object)
+		function ConstructorExample(params) {
+			this,params = params;
+			this.methodexample = function() {
+				console.log('doing stuff');
+			}
+		}
+		const constructorObj = new constructorExample(1);
 
+4. OBJECT MODIFICATION
+----------------------
+	-even though objs are declared using const, you can add and remove methods and properties. constant here means that the circle object itsself cant be reassigned or changed
 
+	1. Adding Parameters
+		const objname = {
+			property: avalue
+		};
+		objname.newparam = 'new param value here';
 
+	2. Adding Methods 
+		const objname = {
+			property: avalue
+		};
+		objname.functionname = function() {};
+
+	3. Deleting Properties Or Methods (both done the same way)
+		3a. Property
+			delete objname.property;
+		3b. Method
+			delete objname.functionname;
 
 
 
